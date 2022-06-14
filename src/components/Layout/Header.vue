@@ -27,11 +27,26 @@
       </div>
     </div>
   </nav>
+  <Login v-if="showLoginModal" @closeModal="closeLoginModal"></Login>
 </template>
 
 <script>
+import Login from '@/components/Home/Login';
+import { mapState } from 'vuex';
 export default {
   name: 'Header',
+  components: { Login },
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState('auth', ['showLoginModal']),
+  },
+  methods: {
+    closeLoginModal() {
+      this.$store.dispatch('auth/setShowLoginModal', false);
+    },
+  },
 };
 </script>
 
