@@ -1,56 +1,70 @@
 <template>
-  <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="2000">
-        <img
-          src="@/assets/banners/banner_1.png"
-          class="d-block w-100"
-          height="400"
-          alt=""
-        />
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img
-          src="@/assets/banners/banner_2.png"
-          class="d-block w-100"
-          height="400"
-          alt=""
-        />
-      </div>
-      <div class="carousel-item">
-        <img
-          src="@/assets/banners/banner_3.png"
-          class="d-block w-100"
-          height="400"
-          alt=""
-        />
-      </div>
-    </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carousel"
-      data-bs-slide="prev"
+  <div>
+    <b-carousel
+      :interval="3000"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
     >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carousel"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+      <b-carousel-slide>
+        <template #img>
+          <img
+            class="d-block img-fluid w-100"
+            src="@/assets/banners/test.jpg"
+            alt="image slot"
+          />
+        </template>
+      </b-carousel-slide>
+      <b-carousel-slide>
+        <template #img>
+          <img
+            class="d-block img-fluid w-100"
+            src="@/assets/banners/banner_1.png"
+            alt="image slot"
+          />
+        </template>
+      </b-carousel-slide>
+      <b-carousel-slide>
+        <template #img>
+          <img
+            class="d-block img-fluid w-100"
+            src="@/assets/banners/banner_2.png"
+            alt="image slot"
+          />
+        </template>
+      </b-carousel-slide>
+      <b-carousel-slide>
+        <template #img>
+          <img
+            class="d-block img-fluid w-100"
+            src="@/assets/banners/banner_3.png"
+            alt="image slot"
+          />
+        </template>
+      </b-carousel-slide>
+    </b-carousel>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Banner',
+  data() {
+    return {
+      slide: 0,
+      sliding: null,
+    };
+  },
+  methods: {
+    onSlideStart() {
+      this.sliding = true;
+    },
+    onSlideEnd() {
+      this.sliding = false;
+    },
+  },
 };
 </script>
-
-<style scoped></style>
+<style scoped>
+.carousel-inner img {
+  max-height: 350px;
+}
+</style>

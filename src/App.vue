@@ -1,10 +1,16 @@
 <template>
-  <router-view />
+  <div>
+    <router-view />
+    <Chat></Chat>
+  </div>
 </template>
 
 <script>
+import Chat from '@/components/Chat/Chat';
+
 export default {
   name: 'App',
+  components: { Chat },
 };
 </script>
 

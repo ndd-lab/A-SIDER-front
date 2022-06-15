@@ -1,7 +1,8 @@
-import { getToken, removeToken, setToken } from '@/utils/token';
-
+// import { getToken, removeToken, setToken } from '@/utils/token';
+import { removeToken, setToken } from '@/utils/token';
 export const state = {
-  accessToken: getToken() ? getToken() : '',
+  // accessToken: getToken() ? getToken() : '',
+  accessToken: 'test',
   showLoginModal: false,
 };
 

@@ -1,25 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import { routes } from '@/router/routes';
+Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: '/',
-    name: 'Layout-home',
-    component: () => import('@/views/Layout/Layout'),
-    children: [
-      {
-        path: '',
-        name: 'home',
-        component: () => import('@/views/Home'),
-      },
-    ],
-  },
-];
-
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  scrollBehavior() {
-    return { top: 0 };
-  },
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes,
 });
 

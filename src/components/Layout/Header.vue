@@ -1,46 +1,40 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">A-SIDERS LOGO</a>
-      <div class="collapse navbar-collapse menu" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              프로젝트
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">프로젝트 공고</a></li>
-              <li><a class="dropdown-item" href="#">SIDER</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">스터디</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <Login v-if="showLoginModal" @closeModal="closeLoginModal"></Login>
+  <div>
+    <Menu></Menu>
+    <b-modal
+      v-model="showModal"
+      title="로그인"
+      centered
+      header-class="p-5 pb-4 border-bottom-0"
+      body-class="p-5"
+      footer-class="p-5"
+      content-class="login-container"
+      hide-footer
+      @hidden="closeLoginModal"
+      ><Login></Login
+    ></b-modal>
+  </div>
 </template>
 
 <script>
 import Login from '@/components/Home/Login';
+import Menu from '@/components/Home/Menu';
 import { mapState } from 'vuex';
 export default {
   name: 'Header',
-  components: { Login },
+  components: { Menu, Login },
   data() {
-    return {};
+    return {
+      showModal: false,
+    };
   },
   computed: {
     ...mapState('auth', ['showLoginModal']),
+  },
+  watch: {
+    showLoginModal(val) {
+      this.showModal = val;
+    },
   },
   methods: {
     closeLoginModal() {
@@ -51,7 +45,10 @@ export default {
 </script>
 
 <style scoped>
-.menu {
-  padding-left: 50px;
+/*.menu {*/
+/*  padding-left: 50px;*/
+/*}*/
+.login-container {
+  border-radius: 1rem;
 }
 </style>
