@@ -1,13 +1,17 @@
 <template>
-  <div class="menu">
+  <b-container class="menu">
     <b-navbar type="light" variant="light" fixed="top">
       <b-navbar-nav class="m-2">
-        <b-nav-item class="logo" href="#">A-SIDERS LOGO</b-nav-item>
+        <b-nav-item class="logo" @click="toRoute('home')"
+          >A-SIDERS LOGO</b-nav-item
+        >
 
         <!-- Navbar dropdowns -->
-        <b-nav-item-dropdown text="프로젝트">
-          <b-dropdown-item href="#">프로젝트 공고</b-dropdown-item>
-          <b-dropdown-item href="#">SIDER</b-dropdown-item>
+        <b-nav-item-dropdown text="프로젝트" @click="toRoute('project')">
+          <b-dropdown-item @click="toRoute('project-recruit')"
+            >프로젝트 공고</b-dropdown-item
+          >
+          <b-dropdown-item>SIDER</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item> 스터디 </b-nav-item>
       </b-navbar-nav>
@@ -16,7 +20,7 @@
         <b-nav-item @click="showLoginModal"> 로그인/회원가입 </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -25,6 +29,9 @@ export default {
   methods: {
     showLoginModal() {
       this.$store.dispatch('auth/setShowLoginModal', true);
+    },
+    toRoute(name) {
+      this.$router.push({ name: name });
     },
   },
 };
