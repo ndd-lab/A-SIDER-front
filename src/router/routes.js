@@ -18,9 +18,22 @@ export const routes = [
     component: () => import('@/views/Layout/Layout'),
     children: [
       {
-        path: '/recruit',
+        path: 'recruit',
         name: 'project-recruit',
         component: () => import('@/views/Project/recruit'),
+      },
+    ],
+  },
+  {
+    path: '/study',
+    name: 'study',
+    redirect: { name: 'study-recruit' },
+    component: () => import('@/views/Layout/Layout'),
+    children: [
+      {
+        path: 'recruit',
+        name: 'study-recruit',
+        component: () => import('@/views/Study/recruit'),
       },
     ],
   },

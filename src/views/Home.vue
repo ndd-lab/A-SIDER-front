@@ -3,7 +3,12 @@
     <div class="home">
       <Banner />
       <div class="project-area mt-4">
-        <h3>신규 프로젝트(하단 목록 6개정도 생각중)</h3>
+        <div class="title">
+          <h3>신규 프로젝트(하단 목록 6개정도 생각중)</h3>
+          <router-link :to="{ name: 'project-recruit' }">
+            <b-icon icon="plus-circle"></b-icon>더보기</router-link
+          >
+        </div>
         <div class="row">
           <div class="col-sm-3 mb-5">
             <div class="card" style="width: 18rem">
@@ -93,7 +98,12 @@
         </div>
       </div>
       <div class="project-area mt-4">
-        <h3>신규 스터디모임(하단 목록 6개정도 생각중)</h3>
+        <div class="title">
+          <h3>신규 스터디모임(하단 목록 6개정도 생각중)</h3>
+          <router-link :to="{ name: 'project-recruit' }">
+            <b-icon icon="plus" />더보기</router-link
+          >
+        </div>
         <div class="row">
           <div class="col-sm-3 mb-5">
             <div class="card" style="width: 18rem">
@@ -206,6 +216,11 @@ export default {
 .project-area {
   width: 1200px;
   margin: 0 auto;
+}
+.project-area .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .home {
   padding-top: 3em;

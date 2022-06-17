@@ -13,19 +13,37 @@
           >
           <b-dropdown-item>SIDER</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item> 스터디 </b-nav-item>
+        <b-nav-item @click="toRoute('study-recruit')"> 스터디 </b-nav-item>
       </b-navbar-nav>
 
-      <b-navbar-nav class="m-2 flex-row ml-md-auto d-none d-md-flex login">
-        <b-nav-item @click="showLoginModal"> 로그인/회원가입 </b-nav-item>
-      </b-navbar-nav>
+      <div
+        v-if="!isLoggedIn"
+        class="m-2 flex-row ml-md-auto d-none d-md-flex login"
+      >
+        <b-navbar-nav>
+          <b-nav-item @click="showLoginModal"> 로그인/회원가입 </b-nav-item>
+        </b-navbar-nav>
+      </div>
+      <div v-else class="m-2 flex-row ml-md-auto d-none d-md-flex login">
+        <b-navbar-nav>
+          <b-nav-item
+            ><b-avatar icon="chat" style="padding: 0" badge="7"> </b-avatar
+          ></b-nav-item>
+          <b-nav-item><b-avatar style="padding: 0"></b-avatar></b-nav-item>
+        </b-navbar-nav>
+      </div>
     </b-navbar>
   </b-container>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'Menu',
+  computed: {
+    ...mapGetters('auth', ['isLoggedIn']),
+  },
   methods: {
     showLoginModal() {
       this.$store.dispatch('auth/setShowLoginModal', true);
