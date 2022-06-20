@@ -20,7 +20,7 @@ export const routes = [
       {
         path: 'recruit',
         name: 'project-recruit',
-        component: () => import('@/views/Project/recruit'),
+        component: () => import('@/views/Project/Recruit'),
       },
     ],
   },
@@ -33,7 +33,20 @@ export const routes = [
       {
         path: 'recruit',
         name: 'study-recruit',
-        component: () => import('@/views/Study/recruit'),
+        component: () => import('@/views/Study/Recruit'),
+      },
+    ],
+  },
+  {
+    path: '/myPage',
+    name: 'myPage',
+    redirect: { name: 'myPage-dashboard' },
+    component: () => import('@/views/Layout/Layout'),
+    children: [
+      {
+        path: 'dashboard',
+        name: 'myPage-dashboard',
+        component: () => import('@/views/MyPage/Dashboard'),
       },
     ],
   },

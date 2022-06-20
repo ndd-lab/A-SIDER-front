@@ -27,9 +27,24 @@
       <div v-else class="m-2 flex-row ml-md-auto d-none d-md-flex login">
         <b-navbar-nav>
           <b-nav-item
-            ><b-avatar icon="chat" style="padding: 0" badge="7"> </b-avatar
+            ><b-avatar icon="chat" style="padding: 0" badge="7"></b-avatar
           ></b-nav-item>
-          <b-nav-item><b-avatar style="padding: 0"></b-avatar></b-nav-item>
+          <!--          <b-nav-item><b-avatar style="padding: 0"></b-avatar></b-nav-item>-->
+          <b-nav-item-dropdown no-caret>
+            <template #button-content>
+              <b-img
+                :src="imgSample"
+                rounded="circle"
+                width="40"
+                height="40"
+              ></b-img>
+            </template>
+            <b-dropdown-item @click="toRoute('myPage-dashboard')"
+              >마이페이지</b-dropdown-item
+            >
+            <b-dropdown-item href="#">쪽지</b-dropdown-item>
+            <b-dropdown-item href="#">로그아웃</b-dropdown-item>
+          </b-nav-item-dropdown>
         </b-navbar-nav>
       </div>
     </b-navbar>
@@ -41,6 +56,11 @@ import { mapGetters } from 'vuex';
 
 export default {
   name: 'Menu',
+  data() {
+    return {
+      imgSample: require('@/assets/banners/test.jpg'),
+    };
+  },
   computed: {
     ...mapGetters('auth', ['isLoggedIn']),
   },
