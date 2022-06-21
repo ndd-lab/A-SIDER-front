@@ -1,5 +1,5 @@
 // import { getToken, removeToken, setToken } from '@/utils/token';
-import { removeToken, setToken } from '@/utils/token';
+import { setToken } from '@/utils/token';
 export const state = {
   // accessToken: getToken() ? getToken() : '',
   accessToken: 'test',
@@ -25,7 +25,6 @@ export const getters = {
 export const actions = {
   logout({ commit }) {
     commit('SET_ACCESS_TOKEN', '');
-    removeToken();
   },
   setShowLoginModal({ commit }, value) {
     commit('SET_SHOW_LOGIN_MODAL', value);

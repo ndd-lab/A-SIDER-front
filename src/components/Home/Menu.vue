@@ -43,7 +43,7 @@
               >마이페이지</b-dropdown-item
             >
             <b-dropdown-item href="#">쪽지</b-dropdown-item>
-            <b-dropdown-item href="#">로그아웃</b-dropdown-item>
+            <b-dropdown-item @click="logout">로그아웃</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </div>
@@ -70,6 +70,9 @@ export default {
     },
     toRoute(name) {
       this.$router.push({ name: name });
+    },
+    logout() {
+      this.$store.dispatch('auth/logout');
     },
   },
 };
