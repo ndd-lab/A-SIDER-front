@@ -48,6 +48,11 @@ export const routes = [
         name: 'myPage-dashboard',
         component: () => import('@/views/MyPage/Dashboard'),
       },
+      {
+        path: 'projectDetail/:seq',
+        name: 'myPage-project-detail',
+        component: () => import('@/views/MyPage/Project/ProjectDetail'),
+      },
     ],
   },
 ];

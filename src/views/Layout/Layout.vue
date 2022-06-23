@@ -20,5 +20,7 @@ export default {
 <style scoped>
 .contents {
   min-height: 70vh;
+  /*margin-top: 160px;*/
+  padding-top: 2.5em;
 }
 </style>
