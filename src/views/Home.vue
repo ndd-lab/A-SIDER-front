@@ -223,6 +223,6 @@ export default {
   align-items: center;
 }
 .home {
-  padding-top: 3em;
+  /*padding-top: 3em;*/
 }
 </style>

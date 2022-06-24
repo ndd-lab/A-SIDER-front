@@ -21,6 +21,6 @@ export default {
 .contents {
   min-height: 70vh;
   /*margin-top: 160px;*/
-  padding-top: 2.5em;
+  /*padding-top: 88px;*/
 }
 </style>

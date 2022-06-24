@@ -79,6 +79,9 @@ export default {
 </script>
 
 <style scoped>
+.menu {
+  height: 88px;
+}
 .logo {
   margin-right: 50px;
 }

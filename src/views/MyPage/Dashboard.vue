@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-container class="dashboard">
+    <b-container class="dashboard mt-5">
       <b-row>
         <b-col cols="3"
           ><b-card style="max-width: 20rem" class="profile mb-2">
@@ -93,7 +93,7 @@ export default {
 
 <style scoped>
 .dashboard {
-  margin-top: 160px;
+  /*margin-top: 40px;*/
 }
 .dashboard .card {
   box-shadow: 1px 1px 3px 1px #dadce0;
