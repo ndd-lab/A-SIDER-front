@@ -29,22 +29,42 @@
           <b-nav-item
             ><b-avatar icon="chat" style="padding: 0" badge="7"></b-avatar
           ></b-nav-item>
-          <!--          <b-nav-item><b-avatar style="padding: 0"></b-avatar></b-nav-item>-->
-          <b-nav-item-dropdown no-caret>
-            <template #button-content>
-              <b-img
-                :src="imgSample"
-                rounded="circle"
-                width="40"
-                height="40"
-              ></b-img>
-            </template>
-            <b-dropdown-item @click="toRoute('myPage-dashboard')"
-              >마이페이지</b-dropdown-item
+          <b-nav-item
+            ><b-img
+              id="myPage"
+              :src="imgSample"
+              rounded="circle"
+              width="40"
+              height="40"
+            ></b-img
+          ></b-nav-item>
+          <b-popover
+            target="myPage"
+            triggers="hover"
+            placement="bottom"
+            custom-class="mt-1"
+            ><router-link :to="{ name: 'myPage-dashboard' }"
+              >마이페이지</router-link
             >
-            <b-dropdown-item href="#">쪽지</b-dropdown-item>
-            <b-dropdown-item @click="logout">로그아웃</b-dropdown-item>
-          </b-nav-item-dropdown>
+            <p>쪽지</p>
+            <p>로그아웃</p>
+          </b-popover>
+          <!--          <b-nav-item><b-avatar style="padding: 0"></b-avatar></b-nav-item>-->
+          <!--          <b-nav-item-dropdown no-caret>-->
+          <!--            <template #button-content>-->
+          <!--              <b-img-->
+          <!--                :src="imgSample"-->
+          <!--                rounded="circle"-->
+          <!--                width="40"-->
+          <!--                height="40"-->
+          <!--              ></b-img>-->
+          <!--            </template>-->
+          <!--            <b-dropdown-item @click="toRoute('myPage-dashboard')"-->
+          <!--              >마이페이지</b-dropdown-item-->
+          <!--            >-->
+          <!--            <b-dropdown-item href="#">쪽지</b-dropdown-item>-->
+          <!--            <b-dropdown-item @click="logout">로그아웃</b-dropdown-item>-->
+          <!--          </b-nav-item-dropdown>-->
         </b-navbar-nav>
       </div>
     </b-navbar>
