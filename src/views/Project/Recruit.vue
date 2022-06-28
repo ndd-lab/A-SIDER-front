@@ -2,7 +2,12 @@
   <div>
     <Banner />
     <b-container class="content">
-      <h3 class="title mt-3 mb-3">모집중인 프로젝트</h3>
+      <div class="title_area">
+        <h3 class="title mt-3 mb-3">모집중인 프로젝트</h3>
+        <router-link :to="{ name: 'project-create' }"
+          >프로젝트(공고) 만들기</router-link
+        >
+      </div>
       <div class="filter_menu mb-4">
         <span
           >필터1
@@ -102,6 +107,11 @@ export default {
 <style scoped>
 .content .title {
   font-weight: bolder;
+}
+.content .title_area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .filter_menu {
   text-align: center;

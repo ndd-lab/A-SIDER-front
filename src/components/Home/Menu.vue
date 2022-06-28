@@ -43,11 +43,19 @@
             triggers="hover"
             placement="bottom"
             custom-class="mt-1"
-            ><router-link :to="{ name: 'myPage-dashboard' }"
+          >
+            <router-link :to="{ name: 'myPage-dashboard' }"
               >마이페이지</router-link
             >
             <p>쪽지</p>
             <p>로그아웃</p>
+            <!--            <b-list-group>-->
+            <!--              <b-list-group-item>Cras justo odio</b-list-group-item>-->
+            <!--              <b-list-group-item>Dapibus ac facilisis in</b-list-group-item>-->
+            <!--              <b-list-group-item>Morbi leo risus</b-list-group-item>-->
+            <!--              <b-list-group-item>Porta ac consectetur ac</b-list-group-item>-->
+            <!--              <b-list-group-item>Vestibulum at eros</b-list-group-item>-->
+            <!--            </b-list-group>-->
           </b-popover>
           <!--          <b-nav-item><b-avatar style="padding: 0"></b-avatar></b-nav-item>-->
           <!--          <b-nav-item-dropdown no-caret>-->
