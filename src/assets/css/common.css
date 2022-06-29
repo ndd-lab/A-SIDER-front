@@ -1,0 +1,17 @@
+.form-control {
+    height: 35px !important;
+    border: none !important;
+    border-bottom: 1px solid #ddd !important;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+}
+
+.custom-select {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    min-width: 150px;
+}
+

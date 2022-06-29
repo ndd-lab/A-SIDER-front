@@ -35,5 +35,6 @@ export default {
   box-shadow: 1px 1px 3px 1px #dadce0;
   border-radius: 50px;
   padding: 30px;
+  max-width: 900px;
 }
 </style>
