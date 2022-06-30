@@ -47,12 +47,39 @@
 </template>
 
 <script>
+// import { getAdministrativeDivision } from '@/api/test';
+import axios from 'axios';
 export default {
   name: 'ProjectCreate',
   data() {
     return {
       selectedStatus: null,
     };
+  },
+  created() {
+    this.getAdministrativeDivision();
+    // getAdministrativeDivision();
+  },
+  methods: {
+    getAdministrativeDivision() {
+      axios
+        .get(
+          `https://api.vworld.kr/req/data?key=E467F74D-7954-3FE4-9CC2-F495E45D93AF&domain=http://localhost:8081&service=data&version=2.0&request=getfeature&format=jsonp&size=1000&page=1&geometry=false&attribute=true&crs=EPSG:3857&geomfilter=BOX(13663271.680031825,3894007.9689600193,14817776.555251127,4688953.0631258525)&data=LT_C_ADSIDO_INFO`,
+          {
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Headers': '*',
+            },
+            withCredentials: true,
+          },
+        )
+        .then(res => {
+          console.log('result::::::::::', res);
+        })
+        .catch(err => {
+          console.log('err::::::::', err);
+        });
+    },
   },
 };
 </script>

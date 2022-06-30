@@ -6,9 +6,12 @@ const instance = axios.create({
   baseURL: '/api',
   timeout: 10000,
 });
-
+axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
 export const getHeaders = () => {
-  const headers = {};
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': '*',
+  };
   const token = getToken();
 
   if (hasToken()) {
