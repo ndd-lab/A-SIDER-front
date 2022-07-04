@@ -1,7 +1,6 @@
 export const routes = [
   {
     path: '/',
-    name: 'Layout-home',
     component: () => import('@/views/Layout/Layout'),
     children: [
       {
@@ -46,7 +45,7 @@ export const routes = [
     path: '/myPage',
     name: 'myPage',
     redirect: { name: 'myPage-dashboard' },
-    component: () => import('@/views/Layout/Layout'),
+    component: () => import('@/views/Layout/MyPageLayout'),
     children: [
       {
         path: 'dashboard',

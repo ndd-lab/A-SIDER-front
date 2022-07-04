@@ -1,82 +1,63 @@
 <template>
   <div>
-    <b-container class="dashboard mt-5">
-      <b-row>
-        <b-col cols="3"
-          ><b-card style="max-width: 20rem" class="profile mb-2">
-            <b-card-img
-              :src="imgSample"
-              style="border-radius: 50%"
-            ></b-card-img>
-            <div>
-              <h4>나는개</h4>
-              <p>개발자</p>
-              <p>Java, NodeJs, vue, React</p>
-            </div>
-          </b-card>
-        </b-col>
-        <b-col cols="9">
-          <b-row>
-            <b-col cols="12">
-              <b-card>
-                <div class="title">
-                  <h5>참여한 프로젝트</h5>
-                  <router-link :to="{ name: '' }" class="secondary">
-                    <b-icon variant="secondary" icon="plus"></b-icon
-                    >더보기</router-link
-                  >
-                </div>
-                <ul>
-                  <li>
-                    <router-link
-                      :to="{
-                        name: 'myPage-project-detail',
-                        params: { seq: 1 },
-                      }"
-                      >프로젝트1</router-link
-                    >
-                  </li>
-                  <li>프로젝트2</li>
-                  <li>프로젝트3</li>
-                </ul>
-              </b-card>
-            </b-col>
-            <b-col cols="6">
-              <b-card>
-                <div class="title">
-                  <h5>참여한 프로젝트</h5>
-                  <router-link :to="{ name: '' }" class="secondary">
-                    <b-icon variant="secondary" icon="plus"></b-icon
-                    >더보기</router-link
-                  >
-                </div>
-                <ul>
-                  <li>프로젝트1</li>
-                  <li>프로젝트2</li>
-                  <li>프로젝트3</li>
-                </ul>
-              </b-card>
-            </b-col>
-            <b-col cols="6">
-              <b-card>
-                <div class="title">
-                  <h5>참여한 스터디 모임</h5>
-                  <router-link :to="{ name: '' }" class="secondary">
-                    <b-icon variant="secondary" icon="plus"></b-icon
-                    >더보기</router-link
-                  >
-                </div>
-                <ul>
-                  <li>모임1</li>
-                  <li>모임2</li>
-                  <li>모임3</li>
-                </ul>
-              </b-card>
-            </b-col>
-          </b-row>
-        </b-col>
-      </b-row>
-    </b-container>
+    <b-row>
+      <b-col cols="12">
+        <b-card>
+          <div class="title">
+            <h5>참여한 프로젝트</h5>
+            <router-link :to="{ name: '' }" class="secondary">
+              <b-icon variant="secondary" icon="plus"></b-icon
+              >더보기</router-link
+            >
+          </div>
+          <ul>
+            <li>
+              <router-link
+                :to="{
+                  name: 'myPage-project-detail',
+                  params: { seq: 1 },
+                }"
+                >프로젝트1</router-link
+              >
+            </li>
+            <li>프로젝트2</li>
+            <li>프로젝트3</li>
+          </ul>
+        </b-card>
+      </b-col>
+      <b-col cols="6">
+        <b-card>
+          <div class="title">
+            <h5>참여한 프로젝트</h5>
+            <router-link :to="{ name: '' }" class="secondary">
+              <b-icon variant="secondary" icon="plus"></b-icon
+              >더보기</router-link
+            >
+          </div>
+          <ul>
+            <li>프로젝트1</li>
+            <li>프로젝트2</li>
+            <li>프로젝트3</li>
+          </ul>
+        </b-card>
+      </b-col>
+      <b-col cols="6">
+        <b-card>
+          <div class="title">
+            <h5>참여한 스터디 모임</h5>
+            <router-link :to="{ name: '' }" class="secondary">
+              <b-icon variant="secondary" icon="plus"></b-icon
+              >더보기</router-link
+            >
+          </div>
+          <ul>
+            <li>모임1</li>
+            <li>모임2</li>
+            <li>모임3</li>
+          </ul>
+        </b-card>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
