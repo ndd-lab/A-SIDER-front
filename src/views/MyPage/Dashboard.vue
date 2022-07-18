@@ -58,12 +58,15 @@
         </b-card>
       </b-col>
     </b-row>
+    <div><swiper></swiper></div>
   </div>
 </template>
 
 <script>
+import Swiper from '@/components/Common/Swiper';
 export default {
   name: 'Dashboard',
+  components: { Swiper },
   data() {
     return {
       imgSample: require('@/assets/banners/test.jpg'),
