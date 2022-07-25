@@ -1,52 +1,48 @@
 <template>
   <div>
-    <b-carousel
-      :interval="3000"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
+    <Carousel
+      :perPage="1"
+      paginationPosition="bottom-overlay"
+      autoplay="true"
+      loop="true"
     >
-      <b-carousel-slide>
-        <template #img>
-          <img
-            class="d-block img-fluid w-100"
-            src="@/assets/banners/test.jpg"
-            alt="image slot"
-          />
-        </template>
-      </b-carousel-slide>
-      <b-carousel-slide>
-        <template #img>
-          <img
-            class="d-block img-fluid w-100"
-            src="@/assets/banners/banner_1.png"
-            alt="image slot"
-          />
-        </template>
-      </b-carousel-slide>
-      <b-carousel-slide>
-        <template #img>
-          <img
-            class="d-block img-fluid w-100"
-            src="@/assets/banners/banner_2.png"
-            alt="image slot"
-          />
-        </template>
-      </b-carousel-slide>
-      <b-carousel-slide>
-        <template #img>
-          <img
-            class="d-block img-fluid w-100"
-            src="@/assets/banners/banner_3.png"
-            alt="image slot"
-          />
-        </template>
-      </b-carousel-slide>
-    </b-carousel>
+      <Slide class="carousel-inner">
+        <img
+          class="d-block img-fluid w-100"
+          src="@/assets/banners/test.jpg"
+          alt="image slot"
+        />
+      </Slide>
+      <Slide class="carousel-inner">
+        <img
+          class="d-block img-fluid w-100"
+          src="@/assets/banners/banner_1.png"
+          alt="image slot"
+        />
+      </Slide>
+      <Slide class="carousel-inner">
+        <img
+          class="d-block img-fluid w-100"
+          src="@/assets/banners/banner_2.png"
+          alt="image slot"
+        />
+      </Slide>
+      <Slide class="carousel-inner">
+        <img
+          class="d-block img-fluid w-100"
+          src="@/assets/banners/banner_3.png"
+          alt="image slot"
+        />
+      </Slide>
+    </Carousel>
   </div>
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+
 export default {
+  components: { Carousel, Slide },
   data() {
     return {
       slide: 0,
