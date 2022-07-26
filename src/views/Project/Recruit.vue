@@ -46,7 +46,7 @@
           <div class="content_list mb-5">
             <b-row>
               <b-col cols="12">
-                <b-card no-body class="overflow-hidden">
+                <b-card no-body class="overflow-hidden" @click="showDetail">
                   <b-row no-gutters>
                     <b-col md="3">
                       <b-card-img
@@ -146,6 +146,11 @@ import Banner from '@/components/Project/Banner';
 export default {
   name: 'recruit',
   components: { Banner },
+  methods: {
+    showDetail() {
+      this.$router.push({ name: 'project-detail' });
+    },
+  },
 };
 </script>
 
@@ -171,5 +176,10 @@ export default {
 }
 .keyword ::after {
   content: 'test';
+}
+
+.content_list .card {
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 </style>

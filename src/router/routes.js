@@ -26,6 +26,11 @@ export const routes = [
         name: 'project-create',
         component: () => import('@/views/Project/Create'),
       },
+      {
+        path: 'detail',
+        name: 'project-detail',
+        component: () => import('@/views/Project/RecruitDetail'),
+      },
     ],
   },
   {
